@@ -1,0 +1,136 @@
+import java.util.*;
+public class Large_word {
+    public static void main(String []args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a String;");
+        String str = sc.nextLine();
+        StringTokenizer st = new StringTokenizer(str); 
+        int large = 0;
+        int len;
+        String str2 = "";
+        String str3 = "";
+        while(st.hasMoreTokens() == true)
+        {
+            str2 = st.nextToken();
+            len = str2.length();
+            if(len >= large)
+            {
+                large = len;
+                str3 = str2;
+            }
+        } 
+        System.out.println(str3+" -- "+large);
+    }
+}
+------------------------------------------------------------------------
+                           import java.util.Scanner;
+
+public class BotSquareMatrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[][] a = new int[4][4];
+        System.out.println("Enter the values:");
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Matrix:");
+        for (int[] row : a) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+
+        int diagonalSum = 0;
+        int boundarySum = 0;
+
+        for (int i = 0; i < 4; i++) {
+            diagonalSum += a[i][i] + a[i][3 - i];
+            boundarySum += a[i][0] + a[i][3] + a[0][i] + a[3][i];
+        }
+
+        System.out.println("Sum of the left and right diagonals: " + diagonalSum);
+        System.out.println("Sum of all the terms in the boundary: " + boundarySum);
+    }
+}
+
+--------------------------------------------------------------------------
+              
+import java.util.*;
+public class toggle{
+    public static void main(String []args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a String;");
+        String str = sc.nextLine();
+        str.toUpperCase();
+        int count = 0;
+        int f =0;
+        StringTokenizer st = new StringTokenizer(str);
+        while(st.hasMoreTokens())
+        {
+            String a = st.nextToken();
+            int len = a.length();
+            for(int i = 0 ; i < len - 1;i++)
+            {
+                char ch = a.charAt(i);
+                for(int j=len-1;j>0+i;j--)
+                {
+                    if(ch == a.charAt(j))
+                    {
+                        count++;
+                        f++;
+                    }
+                }
+            }
+            if(f > 0)
+            System.out.println(a);
+            f=0;
+            }
+            System.out.println("No. of double sequence characters : "+count);
+        }
+    }
+------------------------------------------------------------------------------------
+              import java.util.*;
+
+public class palinv2 {
+    String str;
+
+    palinv2(String st) {
+        str = st;
+    }
+
+    String reverse(String str1) {
+        int len = str1.length();
+        String rev = "";
+        for (int i = len - 1; i >= 0; i--) {
+            char ch = str1.charAt(i);
+            rev += ch;
+        }
+        return rev;
+    }
+
+    void display() {
+        StringTokenizer st = new StringTokenizer(str);
+        while (st.hasMoreTokens()) {
+            String ss = st.nextToken();
+            String rever = reverse(ss);
+            if (ss.equals(rever))
+                System.out.println(ss);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a String;");
+        palinv2 obj = new palinv2(sc.nextLine());
+        obj.display();
+    }
+}
+
+
+                                    
